@@ -1,7 +1,7 @@
 {
   "name": "@fjandin/advent-of-code-2022",
   "version": "1.0.0",
-  "description": "Lint config",
+  "description": "Advent of code 2022",
   "main": "index.js",
   "author": "René Bischoff <rene.bischoff@gmail.com>",
   "license": "ISC",
