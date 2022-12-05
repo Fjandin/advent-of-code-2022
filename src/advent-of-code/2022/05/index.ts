@@ -4,16 +4,12 @@ import * as fs from "fs"
 
 const input = fs.readFileSync("./input.txt", "utf-8").split("\n\n")
 
-/*
-Rotate boxes array 90deg so we get a boxes (x, y) representation
- */
+// Rotate boxes 90deg so we get a boxes[x][y] representation
 const cratesMain = input[0]
     .split("\n")
     .reverse()
     .slice(1)
-    .map((it) => {
-        return it.match(/(.{1,4})/g)?.map((it) => it.trim() || null)
-    })
+    .map((it) => it.match(/(.{1,4})/g)?.map((it) => it.trim() || null))
     .reduce<string[][]>((final, row, y) => {
         row?.map((it, x) => {
             if (it) {
@@ -25,7 +21,6 @@ const cratesMain = input[0]
     }, [])
 
 // Assignment 1
-
 const crates1: string[][] = JSON.parse(JSON.stringify(cratesMain))
 
 input[1]
@@ -47,7 +42,6 @@ const topCrates1 = crates1.reduce((final, crates) => {
 console.log("Top crates 1", topCrates1)
 
 // Assignment 2 - Only difference from assignment 1 is that we don't reverse the crates we pick up
-
 const crates2: string[][] = JSON.parse(JSON.stringify(cratesMain))
 
 input[1]
